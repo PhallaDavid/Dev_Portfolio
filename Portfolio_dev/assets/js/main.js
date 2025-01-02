@@ -1,13 +1,22 @@
 /* ----- NAVIGATION BAR FUNCTION ----- */
-function myMenuFunction(){
+function myMenuFunction() {
   var menuBtn = document.getElementById("myNavMenu");
 
-  if(menuBtn.className === "nav-menu"){
+  if(menuBtn.className === "nav-menu") {
     menuBtn.className += " responsive";
   } else {
     menuBtn.className = "nav-menu";
   }
 }
+
+// Close the menu when a link is clicked
+const menuLinks = document.querySelectorAll('.nav-menu a');
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    const menuBtn = document.getElementById("myNavMenu");
+    menuBtn.className = "nav-menu"; // Close the menu
+  });
+});
 
 /* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
 window.onscroll = function() {headerShadow()};
@@ -33,7 +42,7 @@ function headerShadow() {
 
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText",{
-  strings : ["Web Developer"],
+  strings : ["Developer"],
   loop : true,
   typeSpeed : 100, 
   backSpeed : 80,
@@ -155,3 +164,4 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       alert("Please fill in all the fields.");
   }
 });
+
