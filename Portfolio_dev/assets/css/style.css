@@ -23,7 +23,7 @@ body.dark-mode {
     color: white; /* Sets text color to white */
 }
 body.dark-mode #header {
-    background-color: #333; /* Gray background for header */
+    background-color: rgba(220, 208, 208, 0.1); /* Gray background for header */
 }
 
 
@@ -78,7 +78,7 @@ body.dark-mode footer {
 }
 
 body.dark-mode .footer-menu a {
-    color: rgb(0, 0, 0); /* White text for footer links */
+    color: white /* White text for footer links */
 }
 
 /* Optional: Dark Mode Button */
@@ -90,7 +90,7 @@ body.dark-mode .btn:hover {
 /* Dark Mode Styles */
 body.dark-mode input::placeholder,
 body.dark-mode textarea::placeholder {
-    color: gray; /* Set placeholder color to gray in dark mode */
+    color: rgb(255, 255, 255); /* Set placeholder color to gray in dark mode */
 }
 
 /* Optional: Adjust input and textarea colors for better contrast in dark mode */
@@ -101,13 +101,13 @@ body.dark-mode textarea {
 }
 /* Dark Mode Styles */
 body.dark-mode .icon {
-    color: gray; /* Change icon color to gray in dark mode */
+    color: rgb(255, 255, 255); /* Change icon color to gray in dark mode */
 }
 
 /* Optional: For specific icon classes, such as Font Awesome or Unicons */
 body.dark-mode i, 
 body.dark-mode .icon i {
-    color: gray; /* Change icon color to gray for Font Awesome or Unicons icons */
+    color: rgb(255, 255, 255); /* Change icon color to gray for Font Awesome or Unicons icons */
 }
 
 
@@ -143,7 +143,56 @@ html{
     background: #bbb;
 }
 
-
+/* Loader Styles */
+.loader {
+    display: block;
+    --height-of-loader: 4px;
+    --loader-color: #0071e2;
+    width: 130px;
+    height: var(--height-of-loader);
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 20% auto; /* Center the loader vertically */
+  }
+  
+  .loader::before {
+    content: "";
+    position: absolute;
+    background: var(--loader-color);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 1s ease-in-out infinite;
+  }
+  
+  @keyframes moving {
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+      right: 0;
+      left: unset;
+    }
+  }
+  
+  /* Hide the loader after it's done */
+  #loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Background to match the loader */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
 
 /* ---##-- REUSABLE CSS --##--- */
 
@@ -169,6 +218,9 @@ html{
 i{
     font-size: 16px;
 }
+.education {
+    text-align: left;
+  }
 
 /* ------- BASE -------- */
 body{
@@ -380,6 +432,7 @@ nav{
    border-radius: 30px;
    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 }
+
 .scroll-btn i{
     font-size: 20px;
 }

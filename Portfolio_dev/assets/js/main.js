@@ -42,7 +42,7 @@ function headerShadow() {
 
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText",{
-  strings : ["Developer"],
+  strings : ["David", "Web Dev", ],
   loop : true,
   typeSpeed : 100, 
   backSpeed : 80,
@@ -164,4 +164,14 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       alert("Please fill in all the fields.");
   }
 });
+document.getElementById('navLogo').addEventListener('click', function() {
+  location.reload(); // Refresh the page
+});
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader-wrapper').style.display = 'none'; // Hide the loader
+    document.getElementById('main-content').style.display = 'block'; // Show the main content
+  }, 1000); // 5000ms = 5 seconds
+});
+
 
